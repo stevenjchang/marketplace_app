@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { sampleData } from '../sample_data'
+import { sampleData } from '../sample_data';
+
+import PostDetail from './PostDetail';
+
 
 const PostList = ({ posts, getPosts }) => {
   console.log('sampleData ==>', sampleData);
+  const data = JSON.parse(sampleData).data;
+  console.log('data ==>', data.listings.map(item => '1'));
+
   return (
     <>
       <input type="text" value="Search" />
-
+      {
+        data.listings.map((item) => {
+          return (<PostDetail listing={item} />)
+        })
+      }
     </>
   )
 }

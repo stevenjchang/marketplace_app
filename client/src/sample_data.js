@@ -1,14 +1,14 @@
 const data = {
   listings: [
-    {
-      title: 'title',
-      price: 1400,
-      bedrooms: 3,
-      sharedType: 'shared, private room, private apartment',
-      availableDate: '05/19/2019',
-      contractLength: 'month-to-month, 6 months, 12 months',
-      neighborhood: 'areaA, areaB, areaC'
-    },
+    // {
+    //   title: 'title',
+    //   price: 1400,
+    //   bedrooms: 3,
+    //   sharedType: 'shared, private room, private apartment',
+    //   availableDate: '05/19/2019',
+    //   contractLength: 'month-to-month, 6 months, 12 months',
+    //   neighborhood: 'areaA, areaB, areaC'
+    // },
     {
       title: 'studio near City Hall',
       price: 1700,
