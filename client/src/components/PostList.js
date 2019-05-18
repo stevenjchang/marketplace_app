@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { sampleData } from '../sample_data';
 
 import PostDetail from './PostDetail';
+import Search from './Search';
 
 
 const PostList = ({ posts, getPosts }) => {
@@ -12,7 +13,7 @@ const PostList = ({ posts, getPosts }) => {
 
   return (
     <>
-      <input type="text" value="Search" />
+      <Search />
       {
         data.listings.map((item) => {
           return (<PostDetail listing={item} />)
