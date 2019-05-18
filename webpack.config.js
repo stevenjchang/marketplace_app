@@ -21,7 +21,13 @@ const HtmlPlugin = new HtmlWebPackPlugin({
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/react', '@babel/env'] // presets could also live in a separate babelrc file
+            presets: [  // presets could also live in a separate babelrc file
+              '@babel/react',
+              '@babel/env', 
+              {
+                'plugins': ['@babel/plugin-proposal-class-properties']
+              }
+            ] 
           }
         }
       }
@@ -30,7 +36,7 @@ const HtmlPlugin = new HtmlWebPackPlugin({
   plugins: [
     HtmlPlugin,
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'public/dist'),
