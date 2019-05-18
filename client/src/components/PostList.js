@@ -2,22 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getPosts } from '../actions';
-import { sampleData } from '../sample_data';
+import { getListings } from '../actions';
 import PostDetail from './PostDetail';
 import Search from './Search';
 
 
-const PostList = ({ posts, getPosts }) => {
-  console.log('sampleData ==>', sampleData);
-  const data = JSON.parse(sampleData).data;
-  console.log('data ==>', data.listings.map(item => '1'));
-
+const PostList = ({ listings, getListings }) => {
+  getListings()
   return (
     <>
       <Search />
       {
-        data.listings.map((item) => {
+        listings.map((item) => {
           return (<PostDetail listing={item} />)
         })
       }
@@ -29,11 +25,11 @@ PostList.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  posts: state.posts,
+  listings: state.listings,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getPosts: () => dispatch(getPosts()),
+  getListings: () => dispatch(getListings()),
 });
 
 const PostListContainer = connect(
