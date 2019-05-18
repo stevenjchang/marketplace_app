@@ -1,19 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import _isEmpty from 'lodash.isempty';
 
 import { getListings } from '../actions';
 import PostDetail from './PostDetail';
 import Search from './Search';
 
+const filterListings = (listings, searchParams) => {
+  if (_isEmpty(searchParams)) return listings;
+  return listings.filter((item) => {
+    for (let [param, value] of Object.entries(searchParams)) {
+      if (item[param] !== value) return false
+      return true
+    }
+  })
+}
 
-const PostList = ({ listings, getListings }) => {
+
+const PostList = ({ listings, searchParams, getListings }) => {
   getListings()
+  const filtered = filterListings(listings, searchParams)
   return (
     <>
       <Search />
       {
-        listings.map((item) => {
+        filtered.map((item) => {
           return (<PostDetail listing={item} />)
         })
       }
@@ -22,10 +34,12 @@ const PostList = ({ listings, getListings }) => {
 }
 
 PostList.propTypes = {
+
 }
 
 const mapStateToProps = (state) => ({
   listings: state.listings,
+  searchParams: state.searchParams,
 });
 
 const mapDispatchToProps = (dispatch) => ({
