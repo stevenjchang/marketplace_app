@@ -1,4 +1,4 @@
-const SET_SEARCH_PARAMS = 'SET_SEARCH_PARAMS';
+import { SET_SEARCH_PARAMS } from '../constants';
 
 const searchParams = (state = [], action) => {
   switch (action.type) {

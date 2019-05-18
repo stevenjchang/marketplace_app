@@ -1,9 +1,8 @@
 import axios from 'axios';
+
+import { GET_LISTINGS, SET_SEARCH_PARAMS } from '../constants';
 import { sampleData } from '../sample_data';
 const listings = JSON.parse(sampleData).data.listings;
-
-const GET_LISTINGS = 'GET_LISTINGS';
-const SET_SEARCH_PARAMS = 'SET_SEARCH_PARAMS';
 
 export const getPosts = () => {
   return (dispatch, getState) => {

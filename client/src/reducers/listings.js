@@ -1,5 +1,4 @@
-const GET_LISTINGS = 'GET_LISTINGS';
-const GET_LISTINGS_ERROR = 'GET_LISTINGS_ERROR';
+import { GET_LISTINGS, GET_LISTINGS_ERROR } from  '../constants';
 
 const listings = (state = [], action) => {
   switch (action.type) {
