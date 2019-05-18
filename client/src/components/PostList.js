@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const PostListContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(PostList);
 
 export default PostListContainer;

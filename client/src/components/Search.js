@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { setSearchParams } from '../actions';
 
 class Search extends Component {
   state = {
@@ -10,7 +13,7 @@ class Search extends Component {
   }
 
   handleSubmit = () => {
-    console.log('state:', this.state)
+    this.props.setSearchParams(this.state);
   }
 
   render() {
@@ -43,4 +46,17 @@ class Search extends Component {
   }
 }
 
-export default Search;
+const mapStateToProps = (state) => ({
+
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setSearchParams: (searchParams) => dispatch(setSearchParams(searchParams)), 
+});
+
+const SearchContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Search);
+
+export default SearchContainer;
