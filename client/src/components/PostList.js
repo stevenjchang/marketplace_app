@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { sampleData } from '../sample_data';
 
+import { getPosts } from '../actions';
+import { sampleData } from '../sample_data';
 import PostDetail from './PostDetail';
 import Search from './Search';
 
@@ -26,7 +28,20 @@ const PostList = ({ posts, getPosts }) => {
 PostList.propTypes = {
 }
 
-export default PostList;
+const mapStateToProps = (state) => ({
+  posts: state.posts,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getPosts: () => dispatch(getPosts()),
+});
+
+const PostListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PostList);
+
+export default PostListContainer;
 
 /*
 price range
