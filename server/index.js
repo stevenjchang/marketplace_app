@@ -10,8 +10,10 @@ app.use(express.static(path.join(__dirname, '../public/dist')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get('/api', function(req, res) {
+  res.status(200).send(JSON.stringify({hello: '123'}));
+})
 app.get('/posts', db.getPosts);
-
 app.get('/db', db.selectTestTable);
 
 app.listen(PORT, (err) => {

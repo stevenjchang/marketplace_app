@@ -9,7 +9,9 @@ class AddListing extends Component {
   }
 
   handleSubmit = () => {
-    axios.post('/listings/add', this.state)
+    axios.get('/api', this.state)
+    .then(res =>  { console.log('success', res)})
+    .catch(err => { console.log('err ==>', err);})
     // send this.state to server
     // this.props.history.push(`/posts`)
   }

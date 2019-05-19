@@ -4,6 +4,7 @@ TODO:
 2. [x] handleSubmit to save to store
 3. [x] make constants file
 4. [x] add search filter, v1 - with multiple .filters
-5. [ ] ability to add listing, mocked
-6. [ ] redirect view to list after adding
+5. [x] ability to add listing, mocked
+   1. [x] how to proxy/redirect node
+6. [x] redirect view to list after adding
 7. [ ] 

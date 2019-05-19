@@ -46,7 +46,7 @@ const HtmlPlugin = new HtmlWebPackPlugin({
     historyApiFallback: true,
     proxy: {
       '/api': {
-          target: 'http://[::1]:3000/',
+          target: 'http://[::1]:3000/',  // [::1], not localhost
           //this trick took forever to figure out, using [::1] instead of localhost
           // pathRewrite: { '^/api': '/api' },
           secure: false,
