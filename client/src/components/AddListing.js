@@ -12,8 +12,7 @@ class AddListing extends Component {
     axios.get('/api', this.state)
     .then(res =>  { console.log('success', res)})
     .catch(err => { console.log('err ==>', err);})
-    // send this.state to server
-    // this.props.history.push(`/posts`)
+    this.props.history.push(`/posts`)
   }
 
   render() {
