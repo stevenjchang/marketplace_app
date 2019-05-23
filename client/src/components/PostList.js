@@ -55,6 +55,7 @@ export default PostListContainer;
 
 /*
 price range
+currency
 location/region/area/neighborhood
 bedrooms
 private room/shared room

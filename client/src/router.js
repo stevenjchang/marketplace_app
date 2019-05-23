@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/App';
+import AddListing from './components/AddListing';
 import PostList from './components/PostList';
 
 const Error = () => (
@@ -19,6 +20,7 @@ class Router extends Component {
           <Route path='/list' component={Error} />
           <Route path='/' component={App} exact />
           <Route path='/posts' component={PostList} />
+          <Route path='/add' component={AddListing} />
         </Switch>
         </div>
       </BrowserRouter>
