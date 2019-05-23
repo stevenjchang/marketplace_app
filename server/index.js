@@ -15,6 +15,8 @@ app.get('/api', function(req, res) {
 })
 app.get('/posts', db.getPosts);
 app.get('/db', db.selectTestTable);
+app.post('/api/listings', db.createListing);
+app.get('/api/listings', db.getListings);
 
 app.listen(PORT, (err) => {
   if (err) { return console.log('Error occurred in server/index.js =>', err); }
